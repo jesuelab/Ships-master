@@ -1,0 +1,170 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <net.videgro.ships.preferences.PromoPreferenceRateMe android:key="rate" />
+
+    <PreferenceCategory android:key="@string/pref_GeneralSettings" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_loggingVerbose"
+            android:summary="@string/pref_loggingVerbose_summary"
+            android:title="@string/pref_loggingVerbose_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_MapSettings_title" >
+        <EditTextPreference
+            android:defaultValue="@string/pref_shipScaleFactor_default"
+            android:dialogTitle="@string/pref_shipScaleFactor_dialog_title"
+            android:inputType="numberSigned"
+            android:key="@string/pref_shipScaleFactor"
+            android:summary="@string/pref_shipScaleFactor_summary"
+            android:title="@string/pref_shipScaleFactor_title" />
+        <EditTextPreference
+            android:defaultValue="@string/pref_maxAge_default"
+            android:dialogTitle="@string/pref_maxAge_dialog_title"
+            android:inputType="number"
+            android:key="@string/pref_maxAge"
+            android:summary="@string/pref_maxAge_summary"
+            android:title="@string/pref_maxAge_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_mapZoomToExtent"
+            android:summary="@string/pref_mapZoomToExtent_summary"
+            android:title="@string/pref_mapZoomToExtent_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_mapDisableSound"
+            android:summary="@string/pref_mapDisableSound_summary"
+            android:title="@string/pref_mapDisableSound_title" />
+        <ListPreference
+            android:key="@string/pref_ownLocationIcon"
+            android:title="@string/pref_ownLocationIcon_title"
+            android:summary="@string/pref_ownLocationIcon_summary"
+            android:defaultValue="@string/pref_ownLocationIcon_default"
+            android:entries="@array/pref_ownLocationIcon_entries"
+            android:entryValues="@array/pref_ownLocationIcon_values"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_mapFetchLowerZoomLevels"
+            android:summary="@string/pref_mapFetchLowerZoomLevels_summary"
+            android:title="@string/pref_mapFetchLowerZoomLevels_title" />
+        <EditTextPreference
+            android:defaultValue="@string/pref_mapCacheMaxDiskUsage_default"
+            android:dialogTitle="@string/pref_mapCacheMaxDiskUsage_dialog_title"
+            android:inputType="number"
+            android:key="@string/pref_mapCacheMaxDiskUsage"
+            android:summary="@string/pref_mapCacheMaxDiskUsage_summary"
+            android:title="@string/pref_mapCacheMaxDiskUsage_title" />  
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_ArSettings_title">
+        <Preference android:summary="@string/pref_arSummary" />
+        <EditTextPreference
+            android:defaultValue="@string/pref_arMaxDistance_default"
+            android:dialogTitle="@string/pref_arMaxDistance_dialog_title"
+            android:inputType="number"
+            android:key="@string/pref_arMaxDistance"
+            android:summary="@string/pref_arMaxDistance_summary"
+            android:title="@string/pref_arMaxDistance_title" />
+        <EditTextPreference
+            android:defaultValue="@string/pref_arMaxAge_default"
+            android:dialogTitle="@string/pref_arMaxAge_dialog_title"
+            android:inputType="number"
+            android:key="@string/pref_arMaxAge"
+            android:summary="@string/pref_arMaxAge_summary"
+            android:title="@string/pref_arMaxAge_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_AisReceiverSettings_title" >
+        <EditTextPreference
+            android:defaultValue="@string/pref_rtlSdrPpm_default"
+            android:dialogTitle="@string/pref_rtlSdrPpm_dialog_title"
+            android:inputType="numberSigned"
+            android:key="@string/pref_rtlSdrPpm"
+            android:summary="@string/pref_rtlSdrPpm_summary"
+            android:title="@string/pref_rtlSdrPpm_title" />
+        <Preference android:title="@string/pref_rtlSdrPpmInvalidate_title"
+            android:key="@string/pref_rtlSdrPpmInvalidate"
+            android:summary="@string/pref_rtlSdrPpmInvalidate_summary"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_AisReceiveExternal_title">
+        <Preference android:summary="@string/pref_AisReceiveExternal_summary" />
+
+        <EditTextPreference android:summary="@string/pref_ownIp_summary"
+            android:editable="false"
+            android:key="@string/pref_ownIp" />
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_aisMessagesClientPort_default"
+            android:dialogTitle="@string/pref_aisMessagesClientPort_dialog_title"
+            android:inputType="number"
+            android:key="@string/pref_aisMessagesClientPort"
+            android:summary="@string/pref_aisMessagesClientPort_summary"
+            android:title="@string/pref_aisMessagesClientPort_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_repeater_title" >
+        <Preference android:summary="@string/pref_repeater_summary" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_repeatFromInternal"
+            android:summary="@string/pref_repeatFromInternal_summary"
+            android:title="@string/pref_repeatFromInternal_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_repeatFromExternal"
+            android:summary="@string/pref_repeatFromExternal_summary"
+            android:title="@string/pref_repeatFromExternal_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_repeatFromCloud"
+            android:summary="@string/pref_repeatFromCloud_summary"
+            android:title="@string/pref_repeatFromCloud_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_repeatToCloud"
+            android:summary="@string/pref_repeatToCloud_summary"
+            android:title="@string/pref_repeatToCloud_title" />
+
+        <!-- Repeater 1 -->
+        <EditTextPreference
+            inputType="phone"
+            android:defaultValue="@string/pref_aisMessagesDestinationHost1_default"
+            android:dialogTitle="@string/pref_aisMessagesDestinationHost1_dialog_title"
+            android:key="@string/pref_aisMessagesDestinationHost1"
+            android:summary="@string/pref_aisMessagesDestinationHost1_summary"
+            android:title="@string/pref_aisMessagesDestinationHost1_title" />
+        <EditTextPreference
+            android:defaultValue="@string/pref_aisMessagesDestinationPort1_default"
+            android:dialogTitle="@string/pref_aisMessagesDestinationPort1_dialog_title"
+            android:inputType="number"
+            android:key="@string/pref_aisMessagesDestinationPort1"
+            android:summary="@string/pref_aisMessagesDestinationPort1_summary"
+            android:title="@string/pref_aisMessagesDestinationPort1_title" />
+
+        <!-- Repeater 2 -->
+        <EditTextPreference
+            inputType="phone"
+            android:defaultValue="@string/pref_aisMessagesDestinationHost2_default"
+            android:dialogTitle="@string/pref_aisMessagesDestinationHost2_dialog_title"
+            android:key="@string/pref_aisMessagesDestinationHost2"
+            android:summary="@string/pref_aisMessagesDestinationHost2_summary"
+            android:title="@string/pref_aisMessagesDestinationHost2_title" />
+        <EditTextPreference
+            android:defaultValue="@string/pref_aisMessagesDestinationPort2_default"
+            android:dialogTitle="@string/pref_aisMessagesDestinationPort2_dialog_title"
+            android:inputType="number"
+            android:key="@string/pref_aisMessagesDestinationPort2"
+            android:summary="@string/pref_aisMessagesDestinationPort2_summary"
+            android:title="@string/pref_aisMessagesDestinationPort2_title" />
+    </PreferenceCategory>
+
+    <Preference android:title="@string/pref_PrivacyPolicyCredits_title" >
+        <intent android:action="android.intent.action.VIEW" android:data="@string/pref_PrivacyPolicyCredits_link" />
+    </Preference>
+
+    <net.videgro.ships.preferences.PromoPreferenceRateMe android:key="rate" />
+</PreferenceScreen>

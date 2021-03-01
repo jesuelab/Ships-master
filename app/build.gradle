@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "net.videgro.ships"
+        minSdkVersion 16
+        multiDexEnabled true
+
+        // TODO: Update this only when you have a real device available for development and testing.
+        targetSdkVersion 29
+
+        externalNativeBuild {
+            cmake {
+//                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            firebaseCrashlytics {
+                nativeSymbolUploadEnabled true
+            }
+        }
+    }
+
+    // Upload Crashlytics NDK symbols
+    tasks.whenTaskAdded { task -> if (task.name.startsWith('assemble') && task.name.endsWith("Release")) task.finalizedBy "uploadCrashlyticsSymbolFile" + task.name.substring('assemble'.length()) }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/jni/CMakeLists.txt"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    ndkVersion '21.3.6528147'
+}
+
+ext {
+    permissionsdispatcher_version="3.3.2"
+}
+
+dependencies {
+    /* Permissions dispatcher */
+    /* https://github.com/permissions-dispatcher/PermissionsDispatcher */
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${permissionsdispatcher_version}"
+    implementation "com.github.hotchemi:permissionsdispatcher:${permissionsdispatcher_version}"
+
+    /* Firebase */
+    implementation 'com.google.firebase:firebase-core:17.4.4'
+    implementation 'com.google.firebase:firebase-analytics:17.4.4'
+    implementation 'com.google.firebase:firebase-ads:19.3.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+    implementation 'com.google.firebase:firebase-crashlytics-ndk:17.1.1'
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
+
+    /* Android support libs */
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'androidx.browser:browser:1.2.0'
+    implementation 'androidx.media:media:1.1.0'
+
+    /* ARCore */
+    implementation 'com.google.ar:core:1.17.0'
+    implementation "com.google.ar.sceneform:core:1.15.0"
+    implementation 'com.github.appoly:ARCore-Location:1.2'
+
+    /* Glide - An image loading and caching library for Android - https://github.com/bumptech/glide */
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    /* Misc. */
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation "org.nanohttpd:nanohttpd:2.3.1"
+    implementation "de.codecrafters.tableview:tableview:2.8.1"
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}

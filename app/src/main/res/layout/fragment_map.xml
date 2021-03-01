@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<WebView
+	    android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/promo" />
+
+    <ImageView
+        android:id="@+id/indicatorReceivingExternal"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/promo"
+        android:contentDescription="@string/indicator_ship_received_external"
+        android:src="@drawable/ic_green_sphere" />
+
+    <ImageView
+        android:id="@+id/indicatorReceivingInternal"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="invisible"
+        android:layout_toStartOf="@+id/indicatorReceivingExternal"
+        android:layout_toLeftOf="@+id/indicatorReceivingExternal"
+        android:layout_above="@+id/promo"
+        android:contentDescription="@string/indicator_ship_received_internal"
+        android:src="@drawable/ic_green_sphere" />
+
+	<ToggleButton
+	        android:id="@+id/startStopAisButton"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"        
+	        android:textOff="@string/toggle_turn_on_ais"
+	        android:textOn="@string/toggle_turn_off_ais" />
+
+    <SlidingDrawer
+        android:id="@+id/slidingDrawer2"
+        android:layout_above="@id/slidingDrawer1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:content="@+id/shipsTable"
+        android:handle="@+id/handle2"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/handle2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/sliding_drawer_ships"
+            android:src="@drawable/ic_information_ships" />
+
+            <de.codecrafters.tableview.SortableTableView
+                xmlns:table="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/shipsTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/ships_table_row_separator"
+                android:dividerHeight="1dip"
+                android:textColor="@color/ships_table_text"
+                table:tableView_headerColor="@color/ships_table_text"
+                table:tableView_headerElevation="10"
+                table:tableView_columnCount="7" />
+    </SlidingDrawer>
+
+	<SlidingDrawer
+		android:id="@+id/slidingDrawer1"
+        android:layout_above="@id/promo"
+		android:layout_width="match_parent"
+		android:layout_height="150dp"
+		android:content="@+id/loggingScrollView"
+		android:handle="@+id/handle1"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:id="@+id/handle1"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:contentDescription="@string/sliding_drawer_logging"
+            android:src="@drawable/ic_information" />
+
+		<ScrollView android:id="@+id/loggingScrollView"
+            android:background="#77000000"
+			android:layout_height="fill_parent"
+            android:layout_width="fill_parent">
+			<TextView
+				android:id="@+id/textView1"
+				android:maxLines="100"
+                android:textColor="#FFFFFF"
+				android:singleLine="false"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+		</ScrollView>
+
+	</SlidingDrawer>
+
+    <include android:id="@+id/promo" android:layout_alignParentBottom="true" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/promo" />
+
+</RelativeLayout>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->        
+    <string name="app_name">Ships</string>
+    <string name="app_url">https://play.google.com/store/apps/details?id=net.videgro.ships</string>
+    <string name="app_market_url">market://details?id=net.videgro.ships</string>
+    <string name="dot_provider">.provider</string>
+    
+    <string name="url_mmsi_info">http://www.marinetraffic.com/en/ais/details/ships/mmsi:PLACEHOLDER_MMSI</string>
+
+    <string name="opendevice_intent_filter_schema">opendevice</string>
+    <string name="action_ar">Augmented Reality</string>
+	<string name="action_help">Help</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_general_id">net.videgro.ships-notifications</string>
+    <string name="notification_channel_general_name">Ships</string>
+    <string name="notification_channel_general_description">Ships notifications.</string>
+
+    <string name="notification_channel_services_id">net.videgro.ships-notifications-services</string>
+    <string name="notification_channel_services_name">Ships - services</string>
+    <string name="notification_channel_services_description">Ships services notifications.</string>
+
+    <string name="notification_channel_repeater_id">net.videgro.ships-notifications-repeater</string>
+    <string name="notification_channel_repeater_name">Ships - repeater</string>
+    <string name="notification_channel_repeater_description">Ships repeater notifications.</string>
+
+    <string name="notification_service_nmea_title">Running: NMEA service</string>
+    <string name="notification_service_nmea_description">Receiving NMEA messages via UDP.</string>
+    <string name="notification_service_rtlsdrais_title">Running: RTL-SDR-AIS service</string>
+    <string name="notification_service_rtlsdrais_description">RTL-SDR tuned to AIS frequencies.</string>
+    <string name="notification_service_tracker_title">Running: Own location service</string>
+    <string name="notification_service_tracker_description">Receiving GPS location.</string>
+
+    <string name="notification_repeater_title">Repeater </string>
+
+    <!-- Pages -->
+    <string name="page_show_map">Show map</string>
+
+    <!-- Sharing -->
+    <string name="share_subject">I would like to share this ships map with you.</string>
+    <string name="share_text">Shared via:</string>
+    <string name="share_action_text">Share</string>
+
+    <!-- Buttons -->
+	<string name="toggle_turn_on_calibrating_normal">START (dense traffic)</string>
+	<string name="toggle_turn_off_calibrating_normal">STOP (dense traffic)</string>
+
+	<string name="toggle_turn_on_calibrating_thorough">START (calm traffic)</string>
+	<string name="toggle_turn_off_calibrating_thorough">STOP (calm traffic)</string>
+
+	<string name="toggle_turn_on_ais">START</string>
+	<string name="toggle_turn_off_ais">STOP</string>
+
+    <string name="sliding_drawer_logging">Show logging</string>
+	<string name="sliding_drawer_ships">Show ships</string>
+		
+	<!--- Popups -->
+	<string name="popup_found_ppm_title">Found PPM</string>
+	<string name="popup_found_ppm_message">The PPM has been stored in the settings. The PPM which was found for your device is:</string>
+	
+	<string name="popup_not_found_ppm_title">No valid PPM found</string>
+	<string name="popup_not_found_ppm_message">Not possible to automatically determine PPM. Are there ships in your area? Try it again or manually enter the PPM into the Settings.</string>
+	
+	<string name="popup_other_rtlsdr_device_title">Other RTL-SDR device</string>
+	<string name="popup_other_rtlsdr_device_message">To use another RTL-SDR device, the application will stop now. Insert the RTL-SDR device to start the app automagically. Afterwards make sure to enter the device specific PPM or use the calibrate utility to find it.</string>
+
+	<string name="popup_start_device_failed_title">Failed to start RTL-SDR device</string>
+	<string name="popup_start_device_failed_message">Reason:</string>
+
+    <string name="popup_no_ppm_set_title">First time use / External sources</string>
+    <string name="popup_no_ppm_set_message"><![CDATA[You have three options:<br><br>- Let this app try to calibrate the RTL-SDR device. For this you need to be in an area with (multiple) ships. (RECOMMENDED)<br><br>- Enter the known PPM value of your RTL-SDR device in the Settings,<br><br>- Don\'t use the RTL-SDR device at all / I don\'t have such a device. Receive from external device and/or fellow users only.]]></string>
+    <string name="popup_no_ppm_do_calibrate">Calibrate</string>
+    <string name="popup_no_ppm_do_only_external_sources">Only use external sources</string>
+    <string name="popup_external_sources_title">External sources</string>
+    <string name="popup_external_sources_message">You will only receive Ships data from external sources. To re-enable the Calibrate utility, insert a supported RTL-SDR device.</string>
+
+    <string name="popup_calibration_cancelled_title">Calibration cancelled</string>
+	<string name="popup_calibration_cancelled_message">Cancelled calibration of RTL-SDR device. You will only receive Ship data from fellow users.</string>
+
+	<string name="popup_are_you_sure_title">Are you sure?</string>
+	<string name="popup_are_you_sure_yes">Yes</string>
+	<string name="popup_are_you_sure_no">No</string>
+
+	<string name="popup_receiving_ais_title">Receiving AIS</string>
+	<string name="popup_receiving_ais_message">Waiting for AIS data. Please be patient. After receiving data, the ship(s) will be plotted on the map.</string>
+
+    <string name="popup_select_device_title">Select device</string>
+
+	<string name="popup_usb_host_mode_title">USB host mode / OTG</string>
+	<string name="popup_usb_host_mode_not_supported_message">USB host mode / OTG not supported at your device. You will only receive Ship data from fellow users.</string>
+
+	<string name="popup_usb_connected_runtime_title">USB device connected</string>
+	<string name="popup_usb_connected_runtime_message">You connected a USB device while the application is running. Currently this is not supported. Please restart application to start using the USB device. Application will stop now.</string>
+
+    <string name="popup_ship_info_title">Ship information</string>
+
+    <string name="popup_share_to_cloud_title">Share ships data to cloud</string>
+    <string name="popup_share_to_cloud_message">Do you mind to share ships data with fellow users?\n\nYou can change this later in settings.\n\nWARNING: It is not in all regions allowed to repeat received ships data to third parties.</string>
+    <string name="popup_share_to_cloud_yes">OK, JUST DO IT !</string>
+    <string name="popup_share_to_cloud_no">Don\'t do it</string>
+    <string name="popup_share_to_cloud_message_result">Ship data received from dongle, will be repeated to the cloud. You can change this in Settings.</string>
+
+    <!-- Popups - AR -->
+    <string name="popup_ar_error_title">Not possible to start Augmented Reality</string>
+    <string name="popup_ar_error_arcore_not_installed">Please install ARCore</string>
+    <string name="popup_ar_error_arcore_not_updated">Please update ARCore</string>
+    <string name="popup_ar_error_app_not_updated">Please update this app</string>
+    <string name="popup_ar_error_arcore_not_supported">This device does not support AR</string>
+    <string name="popup_ar_error_arsceneview_not_set">ArSceneView not set.</string>
+
+    <string name="popup_camera_open_error_message">Unable to get camera. Is another app using the camera?</string>
+
+
+    <string name="popup_camera_and_location_permission_request_title">Permissions</string>
+    <string name="popup_camera_and_location_permission_request_message">Location and Camera permissions are needed to use this feature.</string>
+
+    <string name="popup_ar_accuracy_title">Accuracy vessels locations</string>
+    <string name="popup_ar_accuracy_message">The locations of moving vessels depicted on the screen are not their exact locations. Vessels are not continuously sending their position, so more accurate data is simply not available.</string>
+
+	<!-- Permissions -->
+	<string name="permission_externalstorage_rationale">The app needs storage permission to cache map-tiles and to make sharing available.</string>
+    <string name="permission_externalstorage_denied_title">Denied storage permission</string>
+	<string name="permission_externalstorage_denied">You denied storage permission. The app won\'t function as expected.</string>
+	<string name="permission_externalstorage_neverask">You denied storage permission. The app won\'t function as expected. Please grant permission via Settings-App-Ships-Permissions</string>
+
+	<string name="permission_location_rationale">The app needs location permission to plot your location on the map.</string>
+    <string name="permission_location_denied_title">Denied location permission</string>
+	<string name="permission_location_denied">You denied location permission. The app won\'t function as expected.</string>
+	<string name="permission_location_neverask">You denied location permission. The app won\'t function as expected. Please grant permission via Settings-App-Ships-Permissions</string>
+
+	<string name="button_allow">Allow</string>
+	<string name="button_deny">Deny</string>
+
+	<!-- Status -->
+	<string name="connect_usb_device_status_ok">USB device is open.</string>
+    <string name="connect_usb_device_status_error_native_library_not_loaded">This application is not compatible with your device.</string>
+    <string name="connect_usb_device_status_error_no_rtlsdr_device_selected">You have not selected an RTL-SDR device.</string>
+	<string name="connect_usb_device_status_pending_permission_request">No permission to open device, while requesting permission - Not possible to run this application without the right permissions. Sorry!</string>
+	<string name="connect_usb_device_status_error_no_device_found">Not possible to connect to device. Is the device physically connected? Please insert RTL-SDR device before starting. You will only receive Ship data from fellow users.</string>
+	<string name="connect_usb_device_status_error_permission_denied">Permission denied to open device - Not possible to run this application without the right permissions. Sorry!</string>
+	<string name="connect_usb_device_status_error_security_exception">Security exception occurred while opening USB device.</string>
+	<string name="connect_usb_device_status_error_unknown">Unknown error while opening USB device.</string>
+
+    <string name="connect_usb_device_status_exception_unknown_title">Hardware error</string>
+    <string name="connect_usb_device_status_exception_unknown_message">Check cable and RTL-SDR.</string>
+	
+	<string name="connect_usb_device_status_error_stop">Error occurred while stopping RTL-SDR device. Stopped already?"</string>
+	<string name="connect_usb_device_status_error_running_already">RTL-SDR is running already. Must stop before started again.</string>
+	
+	<string name="connect_usb_device_status_change_ppm_ok">Changed PPM.</string>
+	<string name="connect_usb_device_status_change_ppm_failed">Failed to change PPM.</string>
+	
+	<string name="connect_usb_device_status_started">RTL-SDR device started.</string>
+	<string name="connect_usb_device_status_stopped">RTL-SDR device stopped.</string>
+
+    <string name="indicator_ship_received_internal">Ship data received from dongle</string>
+    <string name="indicator_ship_received_external">Ship data received from peer</string>
+
+    <!-- Ships table / info box -->
+    <string name="ships_table_col_country">Country</string>
+    <string name="ships_table_col_type">Type</string>
+    <string name="ships_table_col_mmsi">MMSI</string>
+    <string name="ships_table_col_name_callsign">Name/Callsign</string>
+    <string name="ships_table_col_destination">Destination</string>
+    <string name="ships_table_col_navigation_status">Navigation status</string>
+    <string name="ships_table_col_updated">Updated</string>
+
+    <string name="ships_table_head_dimensions">Dimensions</string>
+    <string name="ships_table_head_position">Position</string>
+
+    <string name="ships_table_country">Country: </string>
+    <string name="ships_table_type">Type: </string>
+	<string name="ships_table_mmsi">MMSI: </string>
+    <string name="ships_table_callsign">Callsign: </string>
+    <string name="ships_table_destination">Destination: </string>
+    <string name="ships_table_navigation_status">Navigation status: </string>
+    <string name="ships_table_speed">Speed: </string>
+    <string name="ships_table_heading">Heading: </string>
+    <string name="ships_table_course">Course: </string>
+    <string name="ships_table_draught">Draught: </string>
+    <string name="ships_table_latitude">Latitude: </string>
+    <string name="ships_table_longitude">Longitude: </string>
+    <string name="ships_table_dim_bow">Bow: </string>
+    <string name="ships_table_dim_port">Port: </string>
+    <string name="ships_table_dim_starboard">Starboard: </string>
+    <string name="ships_table_dim_stern">Stern: </string>
+    <string name="ships_table_updated">Updated: </string>
+    <string name="ships_table_source">Source: </string>
+
+	<!-- Preferences -->
+	<string name="pref_GeneralSettings">General</string>
+	<string name="pref_loggingVerbose">pref_loggingVerbose</string>
+  	<string name="pref_loggingVerbose_summary">Be verbose in displaying logging messages in the status bar.</string>
+  	<string name="pref_loggingVerbose_title">Verbose logging</string>
+  	<string name="pref_MapSettings_title">Map</string>
+    <string name="pref_mapZoomToExtent">pref_mapZoomToExtent</string>
+  	<string name="pref_mapZoomToExtent_summary">On every update of a ship position, zoom the map so it will display all ships.</string>
+  	<string name="pref_mapZoomToExtent_title">Automatic zoom</string>
+    <string name="pref_mapDisableSound">pref_mapDisableSound</string>
+    <string name="pref_mapDisableSound_summary">Don\'t make sound when a name of a ship is received the first time.</string>
+    <string name="pref_mapDisableSound_title">Disable sound</string>
+  	<string name="pref_mapFetchLowerZoomLevels">pref_mapFetchLowerZoomLevels</string>  	              
+  	<string name="pref_mapFetchLowerZoomLevels_summary">Pre fetch map tiles for lower zoomlevels. Will speed up zooming in and out, but will download more data and uses more disk storage.</string>
+  	<string name="pref_mapFetchLowerZoomLevels_title">Fetch lower zoomlevels</string>
+  	<string name="pref_mapCacheMaxDiskUsage">pref_mapCacheMaxDiskUsage</string>
+  	<string name="pref_mapCacheMaxDiskUsage_default">5</string>
+  	<string name="pref_mapCacheMaxDiskUsage_dialog_title">Tiles cache: Maximum disk usage. (MB)</string>
+  	<string name="pref_mapCacheMaxDiskUsage_summary">Maximal disk storage used by the caching tiles server.</string>
+  	<string name="pref_mapCacheMaxDiskUsage_title">Tiles cache: Maximum disk usage.</string>
+
+	<string name="pref_shipScaleFactor">pref_shipScaleFactor</string>
+	<string name="pref_shipScaleFactor_default">5</string>
+	<string name="pref_shipScaleFactor_dialog_title">Scale factor of ships on map. Default value: 5</string>
+	<string name="pref_shipScaleFactor_summary">Change this value to let ships appear bigger/smaller on the map. Higher value, bigger ships.</string>
+	<string name="pref_shipScaleFactor_title">Ship scale factor</string>
+
+	<string name="pref_maxAge">pref_maxAge</string>
+	<string name="pref_maxAge_default">20</string>
+	<string name="pref_maxAge_dialog_title">Maximum age of ships on map. Default value: 20 minutes</string>
+	<string name="pref_maxAge_summary">Change this value to change the maximum age of a ship and its traces on the map.</string>
+	<string name="pref_maxAge_title">Maximum age of Ships</string>
+
+    <string name="pref_ownLocationIcon">pref_ownLocationIcon</string>
+    <string name="pref_ownLocationIcon_title">Own location icon</string>
+    <string name="pref_ownLocationIcon_summary">Icon shown on own location.</string>
+    <string name="pref_ownLocationIcon_default">antenna.png</string>
+    <string-array name="pref_ownLocationIcon_entries">
+        <item>Antenna</item>
+        <item>House</item>
+        <item>Yacht</item>
+        <item>Sailboat</item>
+        <item>Cargo</item>
+    </string-array>
+    <string-array name="pref_ownLocationIcon_values">
+        <item>antenna.png</item>
+        <item>house.png</item>
+        <item>yacht_1.png</item>
+        <item>sailing-yacht_1.png</item>
+        <item>container-ship-top_1.png</item>
+    </string-array>
+
+    <string name="pref_ArSettings_title">Augmented reality (AR)</string>
+    <string name="pref_arSummary">This is an experimental feature, which is not available on all devices. When it is available, an AR-button will be shown at the map-view. When you press the button, the camera will be opened. Be sure to have at least one vessel in your view. In the view: the MMSI, the country flag and eventually the name will be shown. Click on the marker to view more information.</string>
+
+    <string name="pref_arMaxDistance">pref_arMaxDistance</string>
+    <string name="pref_arMaxDistance_default">2000</string>
+    <string name="pref_arMaxDistance_dialog_title">AR Maximum distance (meters)</string>
+    <string name="pref_arMaxDistance_summary">Change this value to show only ships which are within the specified distance range.</string>
+    <string name="pref_arMaxDistance_title">AR Maximum distance</string>
+
+    <string name="pref_arMaxAge">pref_arMaxAge</string>
+    <string name="pref_arMaxAge_default">10</string>
+    <string name="pref_arMaxAge_dialog_title">AR Maximum age (minutes)</string>
+    <string name="pref_arMaxAge_summary">Remove ship from list of ships to render when last update is older than this value.</string>
+    <string name="pref_arMaxAge_title">AR Maximum age</string>
+
+    <!-- RTL-SDR receiver -->
+    <string name="pref_AisReceiverSettings_title">AIS Receiver</string>
+
+	<string name="pref_rtlSdrPpm">pref_rtlSdrPpm</string>
+    <string name="pref_rtlSdrPpm_default">99999</string>
+    <string name="pref_rtlSdrPpm_dialog_title">The RTL-SDR parts per million offset.</string>
+    <string name="pref_rtlSdrPpm_summary">Use the calibrate utility to determine this automatically or set this value manually.</string>
+    <string name="pref_rtlSdrPpm_title">RTL-SDR: PPM</string>
+    <string name="pref_rtlSdrPpmInvalidate">pref_rtlSdrPpmInvalidate</string>
+    <string name="pref_rtlSdrPpmInvalidate_summary">Invalidate the current PPM setting.</string>
+    <string name="pref_rtlSdrPpmInvalidate_title">Use other RTL-SDR device</string>
+
+    <!-- External source -->
+    <string name="pref_AisReceiveExternal_title">Receive from external source (peers)</string>
+    <string name="pref_AisReceiveExternal_summary">Let another (instance of) application send messages to this address. Generic NMEA format/UDP protocol.\nSettings will apply after restart of application.</string>
+
+    <string name="pref_ownIp">pref_ownIp</string>
+    <string name="pref_ownIp_summary">Click to see local IP address</string>
+
+    <string name="pref_aisMessagesClientPort">pref_aisMessagesClientPort</string>
+    <string name="pref_aisMessagesClientPort_default">10111</string>
+    <string name="pref_aisMessagesClientPort_dialog_title">AIS messages client port (UDP port)</string>
+    <string name="pref_aisMessagesClientPort_summary">The UDP port this application is listening for NMEA.</string>
+    <string name="pref_aisMessagesClientPort_title">AIS Messages client port</string>
+
+    <!-- Repeater -->
+    <string name="pref_repeater_title">Repeater</string>
+    <string name="pref_repeater_summary">Repeat received messages to fellow users of this app via cloud or peer-to-peer link, to third party plotter like OpenCPN, or to other interested party like MarineTraffic.\n\nYou can add up to 2 peer-to-peer repeaters.\n\nWARNING: It is not in all regions allowed to repeat received ships data to third parties!\nSettings will apply after restart of application.</string>
+
+    <string name="pref_repeatFromInternal">pref_repeatFromInternal</string>
+    <string name="pref_repeatFromInternal_summary">Repeat received ships (AIS messages) FROM dongle (RTL-SDR).</string>
+    <string name="pref_repeatFromInternal_title">Repeat FROM dongle</string>
+
+    <string name="pref_repeatFromExternal">pref_repeatFromExternal</string>
+    <string name="pref_repeatFromExternal_summary">Repeat received ships (AIS messages) FROM external source.</string>
+    <string name="pref_repeatFromExternal_title">Repeat FROM external source</string>
+
+    <string name="pref_repeatFromCloud">pref_repeatFromCloud</string>
+    <string name="pref_repeatFromCloud_summary">Repeat received ships (AIS messages) FROM fellow users of this app (cloud).</string>
+    <string name="pref_repeatFromCloud_title">Repeat FROM cloud</string>
+
+    <string name="pref_repeatToCloud">pref_repeatToCloud</string>
+    <string name="pref_repeatToCloud_summary">Repeat received ships (AIS messages) TO fellow users of this app (cloud).</string>
+    <string name="pref_repeatToCloud_title">Repeat TO cloud</string>
+
+    <string name="pref_ThirdPartyPlotter_summary">Add an incoming Net/UDP connection in i.e. OpenCPN. Default: address 127.0.0.1 and port 10110.</string>
+    <string name="pref_aisMessagesDestinationHost1">pref_aisMessagesDestinationHost1</string>
+    <string name="pref_aisMessagesDestinationHost1_default">127.0.0.1</string>
+    <string name="pref_aisMessagesDestinationHost1_dialog_title">AIS messages destination host 1 (IP address)</string>
+    <string name="pref_aisMessagesDestinationHost1_summary">The IP address to send received AIS messages to (peer-to-peer). </string>
+    <string name="pref_aisMessagesDestinationHost1_title">AIS Messages destination host 1</string>
+
+    <string name="pref_aisMessagesDestinationPort1">pref_aisMessagesDestinationPort1</string>
+    <string name="pref_aisMessagesDestinationPort1_default">10110</string>
+    <string name="pref_aisMessagesDestinationPort1_dialog_title">AIS messages destination port 1 (UDP port)</string>
+    <string name="pref_aisMessagesDestinationPort1_summary">The UDP port to send received AIS messages to (peer-to-peer). To disable this repeater, enter 0 as value.</string>
+    <string name="pref_aisMessagesDestinationPort1_title">AIS Messages destination port 1</string>
+
+    <string name="pref_aisMessagesDestinationHost2">pref_aisMessagesDestinationHost2</string>
+    <string name="pref_aisMessagesDestinationHost2_default">5.9.207.224</string>
+    <string name="pref_aisMessagesDestinationHost2_dialog_title">AIS messages destination host 2 (IP address)</string>
+    <string name="pref_aisMessagesDestinationHost2_summary">The IP address to send received AIS messages to (peer-to-peer). </string>
+    <string name="pref_aisMessagesDestinationHost2_title">AIS Messages destination host 2</string>
+
+    <string name="pref_aisMessagesDestinationPort2">pref_aisMessagesDestinationPort2</string>
+    <string name="pref_aisMessagesDestinationPort2_default">8098</string>
+    <string name="pref_aisMessagesDestinationPort2_dialog_title">AIS messages destination port 2 (UDP port)</string>
+    <string name="pref_aisMessagesDestinationPort2_summary">The UDP port to send received AIS messages to (peer-to-peer). To disable this repeater, enter 0 as value.</string>
+    <string name="pref_aisMessagesDestinationPort2_title">AIS Messages destination port 2</string>
+
+    <!-- Privacy policy / Credits -->
+	<string name="pref_PrivacyPolicyCredits_title">Privacy policy / Credits</string>
+	<string name="pref_PrivacyPolicyCredits_link">http://blog.videgro.net/contact/privacy-policy-credits-android-apps#ships</string>
+
+    <string name="title_fragment_map">Map</string>
+    <string name="title_fragment_calibrate">Calibrate</string>
+	<string name="title_help_information">Help / Information / Terms and Conditions</string>
+    
+    <string name="title_calibrate">Calibrate RTL-SDR device</string>
+    <string name="description_calibrate">Each RTL-SDR has it\'s unique parts per million offset (PPM). Use this utility to find the PPM for your device or set it directly using the settings of this application. Typical values PPM are between -100 and +100. Average calibration time is between 5 and 10 minutes. Please be patient.</string>
+    <string name="msg_gps_not_enabled">GPS is not enabled. Enable GPS to view your current position at the map.</string>
+    
+    <string name="alt_rtlsdrStick">RTL-SDR device</string>
+
+    <string name="text_help"><![CDATA[
+	    <small>(please read the complete text by scrolling down)</small>
+
+        <h2>Minimal requirements</h2>
+        <p>You can use this app on a device with OTG-support and a so called RTL-SDR dongle connected, in an area where AIS data is available in the air. You must be allowed by local law to receive and process AIS signals.</p>
+        <p>The Ships development team (VIDEGRO) will not be held responsible for any legal issues that might be caused by usage or possession of the app. It is your responsibility to comply with your local law(s) before using Ships. Besides of that we are also not responsible for any issues like financial, raised by using this app and receiving faulty, incomplete and/or delayed information. We do not accept any claims of broken hardware (i.e. SDR-devices and Android devices) caused by this application.</p>
+
+        <h2>Where could I buy a compatible RTL-SDR dongle?</h2>
+        <p>Please search at eBay for \'<a href="http://www.ebay.com/sch/i.html?_nkw=RTL2832U">RTL2832U</a>\' price should be less than 10 euro. Besides of that you also need an OTG cable which is also not expensive at all.</p>
+
+        <h2>Why should I use the Ships-app and not another Android-app which is displaying the ships data on a map?</h2>
+        <p>Of course you are free to select your app, this app is however unique because:</p>
+        <p>
+        - It does not need an Internet/data connection to receive ships data, it is receiving live / real data from air;<br />
+        - It is not limited in number of ships;<br />
+        - There is no extra delay added;<br />
+        - No in app purchases: It is free of charge!<br />
+        </p>
+
+        <h2>Can I use this app in my area/country? /<br />Is it allowed to use this app in my area/country?</h2>
+        <p>This app works everywhere where you are able to receive AIS data. To show the maps you need to have a working data connection or cache the map data in advance. To receive the AIS data from air could be regulated by your local authorities.</p>
+
+        <h2>Preparation</h2>
+        <p>Before receiving ship data, you have to fill the dongle specific PPM value. In this app a calibrate utility is build in. You can use this utility only in an area with ships because the utility is using actual AIS data from ships. It is possible that this PPM value will change when your dongle is warming up. There is no clean solution build in this app to solve this problem, when you know the new value, you have to change the PPM by hand from the settings.</p>
+        <p>You can use this app without Internet/data connection. In this case maps are not loaded/refreshed. To use the app without Internet/data connection but with maps, prepare/cache your maps. To do so:<p>
+        <p>
+        1. Make sure you have an Internet/data connection;<br />
+        2. Navigate the map to the desired area and zoom manually all zoom-levels;<br />
+        Your map-data should be cached now at your device.
+        </p>
+
+        <h2>Third party apps / OpenCPN</h2>
+        <p>It is not the intention to rebuild an application like OpenCPN. The app is not so sophisticated as OpenCPN, instead this Android-app has a unique combination of three functionalities:
+        <p>
+        1. Calibration tool for the RTL-SDR dongle (determine dongle specific PPM value);<br />
+        2. Receive AIS data directly from air on your Android device;<br />
+        3. Plot the AIS data on a map at your Android device. Without delay, without extra paid options. All free of charge!<br />
+        </p>
+        <p>When you would like to use the full functionality of OpenCPN, this app is capable to relay the data to OpenCPN. In case you would like to run this Ships app and OpenCPN at the same device, just leave the settings in Ships-app untouched and create in OpenCPN an incoming connection at IP address 127.0.0.1 and UDP port 10110.</p>
+        <p>When you would like to run OpenCPN at another computer (desktop/laptop), change via the Settings the \'AIS messages destination host\' to the IP address of the computer which is running OpenCPN. Make sure the firewall at the computer which is running OpenCPN is accepting incoming UDP data at port 10110. In OpenCPN create an incoming connection at the IP address of the computer running OpenCPN and UDP port 10110. Caution: This IP address is NOT the IP address of your Android device when you are running OpenCPN on another device. Afterwards restart Ship-app to use the new settings. Of course UDP traffic should be routable from the Android-device to the computer running OpenCPN (wifi-network/Internet).</p>
+
+        <h2>Bugs / Comments</h2>
+        <p>In case you experience bugs or have comments, please contact the development team directly by posting a comment <a href="http://blog.videgro.net/2017/01/ships/?refer=app_bugs">here</a>, instead of posting negative feedback at the Google Play store. We will try to fix the problems as soon as possible.</p>
+
+        <p><a href="http://blog.videgro.net/2017/01/ships/?refer=app_information">More information</a></p>
+
+        <small>(press BACK to return to the app)</small>
+   ]]></string>
+
+    <!-- AR -->
+    <string name="ar_loading_message">Loading your current location...</string>
+    <string name="ar_number_ships">"#Ships: %1$d</string>
+    <string name="ar_up">- UP -</string>
+
+
+</resources>
